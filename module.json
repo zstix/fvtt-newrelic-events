@@ -13,5 +13,12 @@
   "minimumCoreVersion": "0.7.0",
   "esmodules": [
     "modules/init.js"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    }
   ]
 }

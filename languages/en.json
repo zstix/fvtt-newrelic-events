@@ -1,0 +1,14 @@
+{
+  "new-relic-events": {
+    "settings": {
+      "account-id": {
+        "name": "New Relic Account ID",
+        "hint": "The account in New Relic to report events to."
+      },
+      "license-key": {
+        "name": "New Relic License Key",
+        "hint": "Account-specific key used for data injest."
+      }
+    }
+  }
+}
