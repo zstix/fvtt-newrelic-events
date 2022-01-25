@@ -1,0 +1,17 @@
+{
+  "name": "newrelic-events",
+  "title": "New Relic Events",
+  "description": "Track events in New Relic so that you can gain greater insight into your game.",
+  "authors": [
+    {
+      "name": "Zack Stickles",
+      "email": "zstickles@pm.me",
+      "url": "https://zstix.io"
+    }
+  ],
+  "version": "0.0.1",
+  "minimumCoreVersion": "0.7.0",
+  "esmodules": [
+    "modules/init.js"
+  ]
+}
