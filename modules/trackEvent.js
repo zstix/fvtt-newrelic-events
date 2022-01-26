@@ -19,8 +19,8 @@ const API_BASE_URL = "https://insights-collector.newrelic.com/v1";
  * @property {boolean} [rollHasAdvantage]
  * @property {boolean} [rollHasDisadvantage]
  *
- * @property {string} [actorName] (Optional) Name of actor that triggered the event
- * @property {string} [actorHealth] (Optional) Current health of the actor (if applicable)
+ * @property {string} [userName] (Optional) Name of actor that triggered the event
+ * @property {string} [userHealth] (Optional) Current health of the actor (if applicable)
  */
 
 /**
@@ -68,7 +68,7 @@ const _makeAPIRequest = async (body, accountID, licenseKey) => {
  * @param {string} data.eventName The name of the event (required)
  * @returns {Promise<void>}
  */
-export const track = async (data) => {
+export default async (data) => {
   const licenseKey = readSetting(MODULE_SETTINGS.LICENSE_KEY);
   const accountID = readSetting(MODULE_SETTINGS.ACCOUNT_ID);
 
