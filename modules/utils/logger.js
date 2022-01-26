@@ -3,6 +3,15 @@ import { MODULE_NAME } from "../constants.js";
 const SEPARATOR = "|";
 
 /**
+ * A function that will log arguments to the console, prepended with
+ * the module name and a separator.
+ *
+ * @callback LoggerFunction
+ * @param {*[]} args Arguments to log in the console
+ * @returns {void}
+ */
+
+/**
  * Creates a console logging function that will prepend the output with
  * the module name and a separator.
  *
@@ -12,7 +21,7 @@ const SEPARATOR = "|";
  * // will call console.warn with "new-relic-events | Your socks don't match!"
  *
  * @param {'log' | 'warn' | 'error'} [level = "log"] The console log level
- * @returns {(args: *[]) => void} A console logger function
+ * @returns {LoggerFunction} A console logger function
  */
 const _createLogger =
   (level = "log") =>

@@ -1,10 +1,10 @@
-import { MODULE_NAME } from "./constants.js";
+import { MODULE_KEY } from "./constants.js";
 
 /**
  * @param {string} key The key for the setting
  * @returns {string} The full name for the setting
  */
-const _getSettingName = (key) => `${MODULE_NAME}.settings.${key}`;
+const _getSettingName = (key) => `${MODULE_KEY}.settings.${key}`;
 
 /**
  * Register a world-scoped setting that the GM can set.
@@ -16,7 +16,7 @@ const _getSettingName = (key) => `${MODULE_NAME}.settings.${key}`;
 export const registerSetting = (key, type = String) => {
   const settingName = _getSettingName(key);
 
-  game.settings.register(MODULE_NAME, settingName, {
+  game.settings.register(MODULE_KEY, settingName, {
     type,
     scope: "world",
     config: true,
