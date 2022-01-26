@@ -19,8 +19,8 @@ const API_BASE_URL = "https://insights-collector.newrelic.com/v1";
  * @property {boolean} [rollHasAdvantage]
  * @property {boolean} [rollHasDisadvantage]
  *
- * @property {string} [userName] (Optional) Name of actor that triggered the event
- * @property {string} [userHealth] (Optional) Current health of the actor (if applicable)
+ * @property {string} [userName] (Optional) Name of _user_ that triggered the event
+ * @property {string} [userCharacter] (Optional) Name of the _character_
  */
 
 /**
