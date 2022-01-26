@@ -72,7 +72,7 @@ const _getUserDetails = (user) => ({
  * @returns {Promise<void>}
  */
 export default async (message, _html, _data) => {
-  if (!isGM) return;
+  if (!isGM()) return;
 
   /** @todo Handle different types of chat events */
 
