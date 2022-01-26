@@ -1,4 +1,4 @@
-export const MODULE_KEY = "new-relic-events";
+export const MODULE_KEY = "newrelic-events";
 export const MODULE_NAME = "New Relic Events";
 
 export const MODULE_SETTINGS = {
