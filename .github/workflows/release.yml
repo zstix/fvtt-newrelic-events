@@ -1,0 +1,29 @@
+name: Release new module version
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version number"
+        required: true
+        type: string
+
+jobs:
+  build:
+    name: Package and release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+
+      - name: Zip files
+        run: zip -r ./module.zip ./*
+
+      - name: Create release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create \
+            ${{ github.event.inputs.version }} \
+            -t "Release ${{ github.event.inputs.version }}" \
+            ./src/module.json ./module.zip
