@@ -2,6 +2,7 @@
   "name": "newrelic-events",
   "title": "New Relic Events",
   "description": "Track events in New Relic so that you can gain greater insight into your game.",
+  "url": "https://github.com/zstix/fvtt-newrelic-events",
   "authors": [
     {
       "name": "Zack Stickles",
@@ -9,7 +10,6 @@
       "url": "https://zstix.io"
     }
   ],
-  "version": "0.0.1",
   "minimumCoreVersion": "0.7.0",
   "esmodules": [
     "modules/init.js"
@@ -20,5 +20,9 @@
       "name": "English",
       "path": "languages/en.json"
     }
-  ]
+  ],
+
+  "version": "0.0.2",
+  "manifest": "https://github.com/zstix/fvtt-lock-and-key/releases/download/0.0.2/module.json",
+  "download": "https://github.com/zstix/fvtt-lock-and-key/releases/download/0.0.2/module.zip"
 }
