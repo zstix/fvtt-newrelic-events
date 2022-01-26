@@ -9,8 +9,6 @@ const _getSettingName = (key) => `${MODULE_NAME}.settings.${key}`;
 /**
  * Register a world-scoped setting that the GM can set.
  *
- * @todo Implement localization strings
- *
  * @param {string} key The key for the setting
  * @param {*} [type=String] The setting type
  * @returns {void}
