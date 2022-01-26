@@ -26,4 +26,4 @@ jobs:
           gh release create \
             ${{ github.event.inputs.version }} \
             -t "Release ${{ github.event.inputs.version }}" \
-            ./src/module.json ./module.zip
+            ./module.json ./module.zip
