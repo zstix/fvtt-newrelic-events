@@ -84,5 +84,7 @@ export default async (data) => {
     ...data,
   };
 
+  Logger.log(`Sending ${data.eventName} event to New Relic`);
+
   await _makeAPIRequest(body, accountID, licenseKey);
 };

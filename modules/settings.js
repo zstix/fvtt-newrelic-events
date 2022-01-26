@@ -1,3 +1,4 @@
+import Logger from "./utils/logger.js";
 import { MODULE_KEY } from "./constants.js";
 
 /**
@@ -16,12 +17,17 @@ const _getSettingName = (key) => `${MODULE_KEY}.settings.${key}`;
 export const registerSetting = (key, type = String) => {
   const settingName = _getSettingName(key);
 
+  Logger.log(`Registering setting: ${settingName}`);
+
   game.settings.register(MODULE_KEY, settingName, {
     type,
     scope: "world",
     config: true,
     name: `${settingName}.name`,
     hint: `${settingName}.hint`,
+    onChange: (val) => {
+      Logger.log(`${settingName} set to ${val}`);
+    },
   });
 };
 
