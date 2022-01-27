@@ -15,7 +15,8 @@ const API_BASE_URL = "https://insights-collector.newrelic.com/v1";
  *
  * @property {string} [rollType] (Optional) The type of roll (e.g. attack, saving throw)
  * @property {string} [rollRquest] (Optional) What was attempted to be roll (e.g. 2d6)
- * @property {number} [rollResult] (Optional) The final result of the roll (e.g. 17)
+ * @property {string} [rollResult] (Optional) If a d20, the actual number rolled
+ * @property {number} [rollTotal] (Optional) The final result of the roll (e.g. 17)
  * @property {boolean} [rollHasAdvantage]
  * @property {boolean} [rollHasDisadvantage]
  *
@@ -45,6 +46,7 @@ const _makeAPIRequest = async (body, accountID, licenseKey) => {
   try {
     const resp = await fetch(url, {
       method: "POST",
+      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
         "Api-Key": licenseKey,
