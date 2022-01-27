@@ -47,7 +47,6 @@ const _makeAPIRequest = async (body, accountID, licenseKey) => {
   try {
     const resp = await fetch(url, {
       method: "POST",
-      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
         "Api-Key": licenseKey,
