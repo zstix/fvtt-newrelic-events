@@ -52,7 +52,7 @@ const _makeAPIRequest = async (body, accountID, licenseKey) => {
         "Content-Type": "application/json",
         "Api-Key": licenseKey,
       },
-      body: body,
+      body: JSON.stringify(body),
     });
 
     if (resp.status !== 200) {

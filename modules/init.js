@@ -8,6 +8,10 @@ Hooks.once("init", async () => {
 
   registerSetting(MODULE_SETTINGS.ACCOUNT_ID);
   registerSetting(MODULE_SETTINGS.LICENSE_KEY);
+});
 
+// Set up hooks once the UI is loaded.
+// This prevents previously, rendered chat messages from triggering hooks.
+Hooks.once("ready", async () => {
   Hooks.on("renderChatMessage", handleRenderChatMessage);
 });
