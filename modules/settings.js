@@ -2,12 +2,6 @@ import Logger from "./utils/logger.js";
 import { MODULE_KEY } from "./constants.js";
 
 /**
- * @param {string} key The key for the setting
- * @returns {string} The full name for the setting
- */
-const _getSettingName = (key) => `${MODULE_KEY}.settings.${key}`;
-
-/**
  * Register a world-scoped setting that the GM can set.
  *
  * @param {string} key The key for the setting
@@ -15,16 +9,16 @@ const _getSettingName = (key) => `${MODULE_KEY}.settings.${key}`;
  * @returns {void}
  */
 export const registerSetting = (key, type = String) => {
-  const settingName = _getSettingName(key);
+  const localizationPath = `${MODULE_KEY}.${key}`;
 
-  Logger.log(`Registering setting: ${settingName}`);
+  Logger.log(`Registering setting: ${MODULE_KEY}.${key}`);
 
-  game.settings.register(MODULE_KEY, settingName, {
+  game.settings.register(MODULE_KEY, key, {
     type,
     scope: "world",
     config: true,
-    name: `${settingName}.name`,
-    hint: `${settingName}.hint`,
+    name: `${localizationPath}.name`,
+    hint: `${localizationPath}.hint`,
     onChange: (val) => {
       Logger.log(`${settingName} set to ${val}`);
     },
