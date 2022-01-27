@@ -20,10 +20,10 @@
  *
  * @todo Evaluate if this is the right approach
  *
- * @param {Die[]} dice The dice used for this roll
+ * @param {Roll} dice The dice used for this roll
  * @returns {?number} If a d20, this will return the number rolled (before modifiers)
  */
-const _getD20Roll = (dice) => dice.find((d) => d.faces === 20)?.total;
+const _getD20Roll = ({ dice }) => dice.find((d) => d.faces === 20)?.total;
 
 /**
  * Gets the roll type from the roll "flavor" provided by the platform.
