@@ -30,7 +30,8 @@ const API_BASE_URL = "https://insights-collector.newrelic.com/v1";
  * @param {string} accountID Account ID to report to
  * @returns {string} The final API URL for making requests
  */
-const _getAPIURL = (accountID) => `${API_BASE_URL}/${accountID}/events`;
+const _getAPIURL = (accountID) =>
+  `${API_BASE_URL}/accounts/${accountID}/events`;
 
 /**
  * Makes a request to the New Relic events API.
