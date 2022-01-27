@@ -9,18 +9,18 @@ import { MODULE_KEY } from "./constants.js";
  * @returns {void}
  */
 export const registerSetting = (key, type = String) => {
-  const localizationPath = `${MODULE_KEY}.${key}`;
+  const id = `${MODULE_KEY}.${key}`;
 
-  Logger.log(`Registering setting: ${MODULE_KEY}.${key}`);
+  Logger.log(`Registering setting: ${id}`);
 
   game.settings.register(MODULE_KEY, key, {
     type,
     scope: "world",
     config: true,
-    name: `${localizationPath}.name`,
-    hint: `${localizationPath}.hint`,
+    name: `${id}.name`,
+    hint: `${id}.hint`,
     onChange: (val) => {
-      Logger.log(`${settingName} set to ${val}`);
+      Logger.log(`${id} set to ${val}`);
     },
   });
 };
