@@ -1,4 +1,4 @@
-import { gzip } from "https://unpkg.com/pako@latest?module";
+import pako from "https://unpkg.com/pako@latest?module";
 import { readSetting } from "./settings.js";
 import Logger from "./utils/logger.js";
 import { EVENT_TYPE, MODULE_SETTINGS } from "./constants.js";
@@ -46,15 +46,17 @@ const _makeAPIRequest = async (body, accountID, licenseKey) => {
   const url = _getAPIURL(accountID);
 
   try {
+    const encodedBody = await pako.deflate(JSON.stringify(body));
+
     const resp = await fetch(url, {
       method: "POST",
       mode: "no-cors",
       headers: {
-        "Content-Type": "application/json",
         "Content-Encoding": "gzip",
+        "Content-Type": "application/json",
         "Api-Key": licenseKey,
       },
-      body: await gzip(JSON.stringify(body)),
+      body: encodedBody,
     });
 
     if (resp.status !== 200) {
