@@ -1,3 +1,4 @@
+import { gzip } from "https://unpkg.com/pako@latest?module";
 import { readSetting } from "./settings.js";
 import Logger from "./utils/logger.js";
 import { EVENT_TYPE, MODULE_SETTINGS } from "./constants.js";
@@ -50,9 +51,10 @@ const _makeAPIRequest = async (body, accountID, licenseKey) => {
       mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
+        "Content-Encoding": "gzip",
         "Api-Key": licenseKey,
       },
-      body: JSON.stringify(body),
+      body: await gzip(JSON.stringify(body)),
     });
 
     if (resp.status !== 200) {
