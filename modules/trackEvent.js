@@ -1,4 +1,3 @@
-import pako from "https://unpkg.com/pako@latest?module";
 import { readSetting } from "./settings.js";
 import Logger from "./utils/logger.js";
 import { EVENT_TYPE, MODULE_SETTINGS } from "./constants.js";
@@ -46,17 +45,14 @@ const _makeAPIRequest = async (body, accountID, licenseKey) => {
   const url = _getAPIURL(accountID);
 
   try {
-    const encodedBody = await pako.deflate(JSON.stringify(body));
-
     const resp = await fetch(url, {
       method: "POST",
       mode: "no-cors",
       headers: {
-        "Content-Encoding": "gzip",
         "Content-Type": "application/json",
         "Api-Key": licenseKey,
       },
-      body: encodedBody,
+      body: body,
     });
 
     if (resp.status !== 200) {
