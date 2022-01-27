@@ -35,7 +35,6 @@ export const registerSetting = (key, type = String) => {
  * Returns the setting, as a string, if it exists.
  *
  * @param {string} key The key for the setting
- * @returns {string | null} The value for the setting or null
+ * @returns {?string} The value for the setting or null
  */
-export const readSetting = (key) =>
-  game.settings.get(_getSettingName(key)) || "";
+export const readSetting = (key) => game.settings.get(MODULE_KEY, key);

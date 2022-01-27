@@ -1,5 +1,5 @@
 {
-  "new-relic-events": {
+  "newrelic-events": {
     "settings": {
       "account-id": {
         "name": "New Relic Account ID",
