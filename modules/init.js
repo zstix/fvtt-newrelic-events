@@ -1,7 +1,7 @@
-import Logger from "./utils/logger.js";
-import { registerSetting } from "./settings.js";
-import { handleRenderChatMessage } from "./events/renderChatMessage.js";
 import { MODULE_SETTINGS } from "./constants.js";
+import { registerSetting } from "./settings.js";
+import Logger from "./utils/logger.js";
+import handleRenderChatMessage from "./events/renderChatMessage.js";
 
 Hooks.once("init", async () => {
   Logger.log("initialize");
